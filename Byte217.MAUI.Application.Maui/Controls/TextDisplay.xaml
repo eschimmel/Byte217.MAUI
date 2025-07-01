@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Byte217.MAUI.ViewModels;assembly=Byte217.MAUI.ViewModels"
+             x:Class="Byte217.MAUI.Application.Maui.Controls.TextDisplay"
+             x:DataType="viewModels:MainViewModel">
+
+    <VerticalStackLayout>
+        <Border x:Name="Compact" Padding="0,0,0,0" WidthRequest="{Binding PageLayout.LeftColumnWidth}">
+            <ScrollView x:Name="TextEntryScrollView" Orientation="Horizontal" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" HeightRequest="{Binding PageLayout.TextDisplayEntryHeight}" >
+                <Entry x:Name="TextEntry" Text="{Binding KeyProcessor.Text}"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Fill"
+                       MinimumHeightRequest="{Binding PageLayout.TextDisplayEntryHeight}"
+                       FontSize="{Binding PageLayout.TextDisplayFontSize}" 
+                       IsReadOnly="True"
+                       IsEnabled="False"
+                       TextChanged="Entry_TextChanged"
+                       SemanticProperties.Hint="text display"/>
+            </ScrollView>
+        </Border>
+        <Border x:Name="Full" Padding="0,0,0,0" WidthRequest="{Binding PageLayout.LeftColumnWidth}">
+            <ScrollView x:Name="EditorScrollView" Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Always"  HeightRequest="{Binding PageLayout.TextDisplayEditorHeight}">
+                <Editor 
+                    Text="{Binding KeyProcessor.Text}"
+                    VerticalTextAlignment="Start"
+                    HorizontalTextAlignment="Start"
+                    MinimumHeightRequest="{Binding PageLayout.TextDisplayEditorHeight}"
+                    FontSize="{Binding PageLayout.TextDisplayFontSize}" 
+                    IsReadOnly="True"
+                    IsEnabled="False"
+                    AutoSize="TextChanges"
+                    SemanticProperties.Hint="text display"/>
+            </ScrollView>
+        </Border>
+    </VerticalStackLayout>
+</ContentView>

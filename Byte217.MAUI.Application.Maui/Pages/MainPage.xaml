@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Byte217.MAUI.Application.Maui.Controls"
+             xmlns:viewModels="clr-namespace:Byte217.MAUI.ViewModels;assembly=Byte217.MAUI.ViewModels"
+             x:Class="Byte217.MAUI.Application.Maui.Pages.MainPage"
+             x:DataType="viewModels:MainViewModel">
+
+    <Grid Padding="{Binding PageLayout.PagePadding, Converter={x:StaticResource StringToThickness}}" RowSpacing="{Binding PageLayout.InnerSpacing}" ColumnSpacing="{Binding PageLayout.OuterSpacing}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="{Binding PageLayout.RightColumnWidth}"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding PageLayout.RowHeight}"/>
+            <RowDefinition Height="{Binding PageLayout.ButtonHeight}"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Grid.Row="0" Grid.Column="0">
+            <controls:TextDisplay Mode="Compact"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="0" Grid.Column="1">
+            <controls:Button Text="show all" 
+                             Clicked="OnShowAllPressed"
+                             PageLayout="{Binding PageLayout}"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+            <controls:Button Text="clear" 
+                             Command="{Binding KeyProcessor.ClearPressCommand}"
+                             PageLayout="{Binding PageLayout}"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="2" Grid.Column="0">
+            <controls:Keyboard x:Name="Keyboard"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="2" Grid.Column="1" Spacing="{Binding PageLayout.InnerSpacing}">
+            <controls:Button Text="settings" 
+                             Clicked="OnSettingsPressed"
+                             PageLayout="{Binding PageLayout}"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Byte217.MAUI.Application.Maui.Controls"
+             xmlns:viewModels="clr-namespace:Byte217.MAUI.ViewModels;assembly=Byte217.MAUI.ViewModels"
+             x:Class="Byte217.MAUI.Application.Maui.Pages.SettingsPage"
+             x:DataType="viewModels:MainViewModel"
+             Style="{DynamicResource Settings}"
+             x:Name="Control">
+    
+    <Grid Padding="{Binding PageLayout.PagePadding, Converter={x:StaticResource StringToThickness}}" RowSpacing="{Binding PageLayout.InnerSpacing}">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="TabBarRow" Height="44"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Grid.Row="0">
+            <controls:TabBar x:Name="TabBar"/>
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="1" RowSpacing="{Binding PageLayout.InnerSpacing}" ColumnSpacing="{Binding PageLayout.OuterSpacing}" VerticalOptions="Fill">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="{Binding PageLayout.SettingsRightColumnWidth}"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <ScrollView x:Name="ScrollView" Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+                <controls:TabControl x:Name="TabControl"/>
+            </ScrollView>
+            
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="142"/>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="142"/>
+                </Grid.RowDefinitions>
+
+                <VerticalStackLayout Grid.Row="0" Spacing="{Binding PageLayout.InnerSpacing}" VerticalOptions="Start">
+                    <Button Text="save" 
+                            Clicked="OnSavePressed" 
+                            SemanticProperties.Hint="save"/>
+                    <Button Text="cancel" 
+                            Clicked="OnCancelPressed" 
+                            Style="{StaticResource ButtonWhite}" 
+                            SemanticProperties.Hint="cancel"/>
+                </VerticalStackLayout>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

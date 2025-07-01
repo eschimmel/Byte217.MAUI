@@ -1,0 +1,34 @@
+﻿[*.cs]
+
+#NUnit2005: Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
+dotnet_diagnostic.NUnit2005.severity = none
+
+#NUnit2017:Consider using Assert.That(expr, Is.Null) instead of Assert.IsNull(expr)
+dotnet_diagnostic.NUnit2017.severity = none
+
+#NUnit2019:Consider using Assert.That(expr, Is.Not.Null) instead of Assert.IsNotNull(expr)
+dotnet_diagnostic.NUnit2019.severity = none
+
+#IDE0290:Use primary constructor
+dotnet_diagnostic.IDE0290.severity = none
+
+#IDE0300:Collection initialization can be simplified
+dotnet_diagnostic.IDE0300.severity = none
+
+#IDE0028:Simplify collection initialization
+dotnet_diagnostic.IDE0028.severity = none
+
+#IDE0305:Collection initialization can be simplified
+dotnet_diagnostic.IDE0305.severity = none
+
+#IDE0063:'using' statement can be simplified
+dotnet_diagnostic.IDE0063.severity = none
+
+#IDE0057:Substring can be simplified
+dotnet_diagnostic.IDE0057.severity = none
+
+#IDE0130:Namespace does not match folder structure
+dotnet_diagnostic.IDE0130.severity = none
+
+#IDE0066:Convert switch statement to expression
+dotnet_diagnostic.IDE0066.severity = none

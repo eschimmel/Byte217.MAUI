@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Byte217.MAUI.Core\Byte217.MAUI.Core.csproj" />
+    <ProjectReference Include="..\Byte217.MAUI.Models\Byte217.MAUI.Models.csproj" />
+    <ProjectReference Include="..\Byte217.MAUI.ObservableModels\Byte217.MAUI.ObservableModels.csproj" />
+  </ItemGroup>
+
+</Project>

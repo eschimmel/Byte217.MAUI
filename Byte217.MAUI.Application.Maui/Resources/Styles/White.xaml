@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="Byte217.MAUI.Application.Maui.Resources.Styles.White">
+
+    <Color x:Key="ButtonText">#ef712a</Color>
+    <Color x:Key="ButtonDarkText">#ee8346</Color>
+
+    <Color x:Key="ButtonBackground">White</Color>
+    <Color x:Key="ButtonDarkBackground">#242424</Color>
+
+    <Color x:Key="ButtonBorder">#ef712a</Color>
+    <Color x:Key="ButtonDarkBorder">#ee8346</Color>
+
+    <Color x:Key="Background">#FAFAFA</Color>
+    <Color x:Key="BackgroundDark">#242424</Color>
+
+    <Color x:Key="LabelText">#242424</Color>
+    <Color x:Key="LabelDarkText">#E1E1E1</Color>
+
+    <Style TargetType="Button" ApplyToDerivedTypes="True" x:Key="Key">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={DynamicResource ButtonText}, Dark={DynamicResource ButtonDarkText}}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={DynamicResource ButtonBackground}, Dark={DynamicResource ButtonDarkBackground}}" />
+        <Setter Property="FontFamily" Value="OpenSansSemibold"/>
+        <Setter Property="BorderColor" Value="{AppThemeBinding Light={DynamicResource ButtonBorder}, Dark={DynamicResource ButtonDarkBorder}}" />
+        <Setter Property="BorderWidth" Value="2"/>
+    </Style>
+
+    <Style TargetType="Button" ApplyToDerivedTypes="True" x:Key="Filter">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LabelText}, Dark={StaticResource LabelDarkText}}" />
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="TextTransform" Value="Uppercase"/>
+    </Style>
+
+</ResourceDictionary>

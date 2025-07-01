@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Byte217.MAUI.Application.Maui.Controls"
+             xmlns:viewModels="clr-namespace:Byte217.MAUI.ViewModels;assembly=Byte217.MAUI.ViewModels"
+             x:Class="Byte217.MAUI.Application.Maui.Pages.TextPage"
+             x:DataType="viewModels:MainViewModel">
+    
+    <Grid Padding="{Binding PageLayout.PagePadding, Converter={x:StaticResource StringToThickness}}" RowSpacing="{Binding PageLayout.InnerSpacing}" ColumnSpacing="{Binding PageLayout.OuterSpacing}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="{Binding PageLayout.RightColumnWidth}"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Grid.Row="0" Grid.Column="0">
+            <controls:TextDisplay Mode="Full"/>
+        </VerticalStackLayout>
+            
+        <VerticalStackLayout Grid.Row="0" Grid.Column="1">
+            <controls:Button Text="back"
+                             Clicked="OnBackPressed"
+                             PageLayout="{Binding PageLayout}"
+                             SemanticProperties.Hint="back"/>
+        </VerticalStackLayout>
+    </Grid>
+    
+</ContentPage>

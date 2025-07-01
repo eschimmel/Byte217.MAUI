@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Byte217.MAUI.Application.Maui.Controls"
+             xmlns:viewModels="clr-namespace:Byte217.MAUI.ViewModels;assembly=Byte217.MAUI.ViewModels"
+             x:Class="Byte217.MAUI.Application.Maui.Controls.TabBar"
+             x:DataType="viewModels:MainViewModel"
+             Style="{DynamicResource Settings}">
+    
+    <HorizontalStackLayout Spacing="16">
+        <VerticalStackLayout>
+            <controls:Button x:Name="Keyboard" Text="KEYBOARD" Command="{Binding KeyboardSettingsPressCommand}" Style="{StaticResource Tab}" SemanticProperties.Hint="Keyboard"/>
+            <Rectangle HorizontalOptions="Fill" Fill="{StaticResource Primary}" MinimumHeightRequest="{OnPlatform iOS='2', Default='6'}" IsVisible="{Binding ShowKeyboardSettings}" StrokeThickness="1"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <controls:Button x:Name="Dictionary" Text="DICTIONARY" Command="{Binding DictionaryPressCommand}" Style="{StaticResource Tab}" SemanticProperties.Hint="Dictionary"/>
+            <Rectangle HorizontalOptions="Fill" Fill="{StaticResource Primary}" MinimumHeightRequest="{OnPlatform iOS='2', Default='6'}" IsVisible="{Binding ShowDictionary}" StrokeThickness="1"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <controls:Button x:Name="History" Text="HISTORY" Command="{Binding HistoryPressCommand}" Style="{StaticResource Tab}" SemanticProperties.Hint="History"/>
+            <Rectangle HorizontalOptions="Fill" Fill="{StaticResource Primary}" MinimumHeightRequest="{OnPlatform iOS='2', Default='6'}" IsVisible="{Binding ShowHistory}" StrokeThickness="1"/>
+        </VerticalStackLayout>
+    </HorizontalStackLayout>
+</ContentView>

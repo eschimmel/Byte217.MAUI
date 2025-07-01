@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Byte217.MAUI.Application.Maui.Controls;assembly=Byte217.MAUI.Application.Maui"
+             xmlns:viewModels="clr-namespace:Byte217.MAUI.ViewModels;assembly=Byte217.MAUI.ViewModels"
+             x:Class="Byte217.MAUI.Application.Maui.Controls.TabControl"
+             x:DataType="viewModels:MainViewModel">
+
+    <VerticalStackLayout>
+        <controls:KeyboardSettingsTab IsVisible="{Binding ShowKeyboardSettings}"/>
+        <controls:DictionaryTab IsVisible="{Binding ShowDictionary}"/>
+        <controls:HistoryTab IsVisible="{Binding ShowHistory}"/>
+    </VerticalStackLayout>
+</ContentView>
