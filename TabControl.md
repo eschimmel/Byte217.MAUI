@@ -4,7 +4,7 @@ This solution shows how to show a tab control with an underlined title for the a
 
 
 ## Problem
-Many developers have created a Tab Control and there are many ways to achieve the goal. My challenge was to underline the text of the active tab on all the platforms. Underlining the text gives a good user experience, because it clearly indicates which tab is the active one. On my page I have a TabControl with three tabs.
+Many developers have created a Tab Control and there are many ways to achieve the goal. My challenge was to underline the text of the active tab on all the platforms. Underlining the text gives a good user experience, because it clearly indicates which tab is the active one. The standard tab control works on pages and used the AppShell component. In my case, I wanted multiple tabs on one page and not multiple pages controlled by a TabbedPage. On my page I have a TabControl with three tabs.
 
 
 ## Solution
