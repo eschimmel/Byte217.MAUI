@@ -36,11 +36,11 @@ The problem to solve is:
 2. To add scrollbars to a readonly, disabled Editor when the text doesn't fit anymore
 
 
-In Compact Mode, using a Entry:
+In Compact Mode, using an Entry:
 1. I placed the Entry in a ScrollView without scrollbars. When the Entry becomes wider than the ScrollView, I scroll the Entry to the end. This will show the last characters entered.
 2. However, this method has a side effect. As long as the text fits within the Entry, its border is visible on all sides. When the text doesn't fit anymore, the Entry grows bigger than its surrounding ScrollView and the border on the right side disappears. To make up for this, I placed a Border component around the ScrollView
 
-In Full Mode, using a Editor:
+In Full Mode, using an Editor:
 1. I placed the Editor in a ScrollView with a vertical scrollbar. The Editor resizes when the text doesn't fit anymore. This will cause the vertical scrollbar on the ScrollView to appear. For consistency, I have added a similar Border around this ScrollView.
 
 In my case, only the Entry is shown together with the keys on the Keyboard. The Editor is more for display purposes only. In the Entry_TextChanged event handler, I had to add a call to InvalidateMeasure() and an await Task.Delay(50) to make this work on all platforms. As long as text is entered the Editor is scrolled to its initial position, which shows the text from the beginning. This ensures that switching modes always shows the text from the beginning in Full Mode. Once in Full Mode, the scrollbar can be used to scroll to text closer to the end.
