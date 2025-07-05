@@ -24,7 +24,7 @@ File: Byte217.MAUI.Application.Maui/Pages/MainPage.xaml
 This shows the TextDisplay in its Compact Mode, an Entry without scrollbar that scrolls horizontally when the text doesn't fit.
 
 File: Byte217.MAUI.Application.Maui/Pages/TextPage.xaml 
-This shows the TextDisplay in Full Mode, a multiline Editor with a vertical scrollbar when the text doesn't fit.
+Pressing the 'Show all' button takes the user the a page with the TextDisplay in Full Mode, a multiline Editor with a vertical scrollbar when the text doesn't fit.
 
 ## How it works
 An enabled Entry gives the user the ability to scroll through the text by placing the cursor within the text and move it. This is not possible with readonly, disabled Entry. It only shows the text that fits within its dimensions.
